@@ -90,14 +90,15 @@
 .card {
   display: flex;
   flex-direction: column;
+  background-color: black;
   list-style-type: none;
-  border-radius: 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .card__image {
   width: 282px;
   height: 282px;
-  border-radius: 10px 10px 0 0;
+  /* border-radius: 10px; */
 }
 
 .card__description {
@@ -132,12 +133,6 @@
 }
 
 .footer {
-  position: absolute;
-  width: 318px;
-  height: 18px;
-
-  left: 200px;
-  top: 1139px;
 }
 
 .footer__text {
@@ -149,6 +144,11 @@
   width: 318px;
   height: 18px;
   padding-bottom: 60px;
+  position: absolute;
+  width: 318px;
+  height: 18px;
+  left: 200px;
+  top: 1139px;
 }
 @media screen and (max-width: 1100px) {
   .profile {
