@@ -18,7 +18,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .card__image {
@@ -57,4 +57,18 @@
   width: 21px;
   height: 18px;
   border: 0;
+}
+
+.card__like-button:hover {
+  opacity: 50%;
+  transition: 0.1s;
+}
+.card__like-button:active {
+  transform: scale(0.9);
+}
+
+@media screen and (max-width: 596px) {
+  .cards {
+    margin-top: 36px;
+  }
 }
