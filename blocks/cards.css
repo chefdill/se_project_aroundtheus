@@ -52,11 +52,17 @@
   font-family: "Inter", sans-serif;
 }
 
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
 .card__like-button {
   background: transparent url(../images/heart.svg) center no-repeat;
   width: 21px;
   height: 18px;
   border: 0;
+  cursor: pointer;
 }
 
 .card__like-button:hover {

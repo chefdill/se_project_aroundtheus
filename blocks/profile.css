@@ -17,6 +17,19 @@
   height: 24px;
   width: 24px;
   grid-area: button;
+  align-self: center;
+  border: 1px solid #ffffff;
+  margin: 0;
+  cursor: pointer;
+}
+
+.profile__edit-button:hover {
+  opacity: 50%;
+  transition: 0.1s;
+}
+
+.profile__edit-button:active {
+  transform: scale(0.9);
 }
 
 .profile__plus-button {
@@ -32,6 +45,7 @@
   font-weight: 500;
   grid-area: title;
   margin: 0;
+  padding-right: 18px;
 }
 
 .profile__description {
