@@ -37,6 +37,9 @@
   width: 150px;
   height: 50px;
   margin-left: auto;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .profile__title {
