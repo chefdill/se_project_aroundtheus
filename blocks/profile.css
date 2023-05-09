@@ -49,6 +49,7 @@
   grid-area: title;
   margin: 0;
   padding-right: 18px;
+  font-family: "Inter", sans-serif;
 }
 
 .profile__description {
@@ -57,6 +58,7 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
 .profile__image {
