@@ -5,8 +5,8 @@
 }
 
 .page__content {
-  /* margin-left: 200px;
-  margin-right: 200px; */
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .page__section {
@@ -21,15 +21,12 @@
     margin: 0px 20px;
     max-width: calc(100% - 40px);
   }
-  .page__content {
-    margin-left: 200px;
-    margin-right: 200px;
-  }
 }
 
 @media screen and (min-width: 320px) {
   .page__content {
     margin-left: 19px;
     margin-right: 19px;
+    overflow: wrap;
   }
 }
