@@ -4,6 +4,8 @@
   display: grid;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   grid-template-columns: repeat(auto-fit, 282px);
+  position: relative;
+  margin: 0 auto;
 }
 
 .header__image {
@@ -11,6 +13,7 @@
   height: 33px;
   padding-bottom: 41px;
   margin-top: 45px; 
+  object-fit: contain;
 }
 
 @media screen and (max-width: 596px) {
@@ -24,5 +27,20 @@
     margin-left: 27px;
     padding-bottom: 32px;
     margin-top: 28px;
+  }
+}
+@media screen and (max-width: 879px) {
+  .header {
+    min-height: 85px;
+    max-width: 581px;
+  }
+  .header__logo {
+    margin-left: 27px;
+    max-width: 126px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .header {
+    width: 100%;
   }
 }
