@@ -112,3 +112,20 @@
     margin-top: 22px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .profile__info {
+    margin-top: 27px;
+    margin-bottom: 36px;
+  }
+  .profile__add-button {
+    margin: 0;
+  }
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .profile__title {
+    line-height: 27px;
+  }
+}
