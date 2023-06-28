@@ -1,46 +1,25 @@
 .header {
-  padding: 45px;
   max-width: 880px;
   display: grid;
-  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-  grid-template-columns: repeat(auto-fit, 282px);
-  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: solid 1px rgba(84, 84, 84, 0.7);
   margin: 0 auto;
 }
 
 .header__image {
   width: 173px;
-  height: 33px;
-  padding-bottom: 41px;
+  max-height: 33px;
   margin-top: 45px;
-  object-fit: contain;
+  margin-bottom: 40px;
 }
 
-@media screen and (max-width: 596px) {
-  .header {
-    width: 320px;
-    max-width: 100%;
-  }
+@media screen and (max-width: 768px) and (min-width: 320px) {
   .header__image {
-    width: 126px;
-    height: 24px;
-    margin-left: 27px;
-    padding-bottom: 32px;
-    margin-top: 28px;
-  }
-}
-@media screen and (max-width: 879px) {
-  .header {
-    min-height: 85px;
-    max-width: 581px;
-  }
-  .header__logo {
-    margin-left: 27px;
     max-width: 126px;
-  }
-}
-@media screen and (max-width: 580px) {
-  .header {
-    width: 100%;
+    max-height: 24px;
+    margin-top: 28px;
+    margin-bottom: 32px;
+    margin-left: 27px;
   }
 }
