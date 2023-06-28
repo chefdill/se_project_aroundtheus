@@ -10,6 +10,8 @@
     "title button"
     "description description";
   grid-template-columns: minmax(auto 272px) auto;
+  grid-gap: 7px 18px;
+  margin-right: auto;
 }
 
 .profile__edit-button {
@@ -52,7 +54,6 @@
   white-space: nowrap;
   grid-area: title;
   margin: 0;
-  padding-right: 18px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
@@ -61,6 +62,7 @@
   line-height: 22px;
   font-weight: 400;
   text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
   grid-area: description;
   margin: 0;
