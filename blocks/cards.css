@@ -1,7 +1,7 @@
 .cards {
   display: flex;
   align-items: center;
-  padding-top: 47.25px;
+  padding-top: 40px;
   max-width: 880px;
 }
 
@@ -14,10 +14,4 @@
   max-width: 880px;
   padding: 0;
   margin: 0;
-}
-
-@media screen and (min-width: 320px) {
-  .cards {
-    justify-content: center;
-  }
 }
