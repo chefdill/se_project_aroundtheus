@@ -10,7 +10,7 @@
 
 **Intro**
 
-This project is for the person that has traveled to all of these places.
+This project is for the person that has traveled to all of these national and outdoor parks.
 
 **Figma**
 
@@ -19,7 +19,7 @@ This project is for the person that has traveled to all of these places.
 
 **Images**
 
-Exported images from the image file. Added the images to script to make it easier to read in code.
+- Exported images from the image folder that were downloaded from a webpage. Images of national parks and outdoor parks. Added the images to script to make it easier to read in code.
 
 **Features**
 
