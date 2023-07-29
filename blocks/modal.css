@@ -1,0 +1,14 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: aqua;
+  z-index: 999;
+}
+
+.modal__container {
+  background-color: white;
+  margin: auto;
+}
