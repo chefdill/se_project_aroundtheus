@@ -17,7 +17,7 @@
   padding: 36px;
   border-radius: 10px;
   position: relative;
-  width: 330px;
+  width: 358px;
 }
 
 .modal__heading {
@@ -119,6 +119,7 @@
   .modal__container {
     width: 282px;
     border: 1px;
+    padding: 25px 22px;
   }
 
   .modal__close {
