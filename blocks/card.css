@@ -50,6 +50,10 @@
   padding: 0;
 }
 
+.card__like-button_active {
+  background: transparent url(../images/likedheart.svg);
+}
+
 .card__like-button:hover {
   opacity: 50%;
   transition: 0.1s;
