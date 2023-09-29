@@ -38,8 +38,6 @@ const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__plus-button");
 const addNewModalCard = document.querySelector("#add-card-modal");
 const addCardCloseButton = document.querySelector("#add-card-close-button");
-const newCardTitle = document.querySelector(".modal__input_type_title");
-const newCardUrl = document.querySelector(".modal__input_type_url");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -60,12 +58,12 @@ const previewImageModalClose = document.querySelector(
   );
 
 /*Functions*/
-function openPopup(modal){
-  addNewModalCard.classList.add("modal_opened");
+function openPopup(popup){
+  popup.classList.add("modal_opened");
 }
 
 function closePopup(modal) {
-  profileEditModal.classList.remove("modal_opened");
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -109,16 +107,16 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
+  closePopup(profileEditModal);
 }
 
 function handleCardSubmit(e){
   e.preventDefault();
-  newCardTitle = cardTitleInput.value;
-  newCardUrl = cardUrlInput.value;
+  const Title = cardTitleInput.value;
+  const Url = cardUrlInput.value;
   renderCard({ Title, Url }, cardListEl);
   closePopup(addNewModalCard);
-  // addNewCardFormElement.reset();
+  addNewCardFormElement.reset();
 }
 
 function renderCard(cardData, wrapper){
@@ -135,7 +133,9 @@ profileEditButton.addEventListener("click", () => {
 
 /*forProfile*/
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-profileEditCloseButton.addEventListener("click", closePopup);
+profileEditCloseButton.addEventListener("click", () => {
+  closePopup(profileEditModal);
+});
 
 /*forCards*/
 addNewModalCard.addEventListener("submit", handleCardSubmit);
