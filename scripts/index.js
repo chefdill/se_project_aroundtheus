@@ -85,13 +85,6 @@ function getCardElement(cardData) {
   cardImageEl.alt = cardData.alt;
   cardTitleEl.textContent = cardData.name;
 
-  cardImageEl.addEventListener("click", () =>{
-    previewImage.src = cardData.link;
-    previewImage.alt = cardData.name;
-    previewImage.textContent = cardData.name;
-    openPopup(previewImageModal);
-  })
-
   return cardElement;
 }
 
@@ -112,11 +105,10 @@ function handleProfileEditSubmit(e) {
 
 function handleCardSubmit(e){
   e.preventDefault();
-  const Title = cardTitleInput.value;
-  const Url = cardUrlInput.value;
-  renderCard({ Title, Url }, cardListEl);
+  const name = cardTitleInput.value;
+  const link = cardUrlInput.value;
+  renderCard({name, link}, cardListEl);
   closePopup(addNewModalCard);
-  addNewCardFormElement.reset();
 }
 
 function renderCard(cardData, wrapper){
@@ -124,7 +116,7 @@ function renderCard(cardData, wrapper){
   wrapper.prepend(cardElement);
 }
 
-/*Event Listeners*/
+/*EVENT LISTENERS*/
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -146,7 +138,5 @@ addCardCloseButton.addEventListener("click", () =>
   closePopup(addNewModalCard)
 );
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-});
+initialCards.forEach((cardData)  => renderCard(cardData, cardListEl));
+ 
