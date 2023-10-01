@@ -32,7 +32,7 @@ const initialCards = [
 ];
 
 /*Elements*/
-const profileEditButton = document.querySelector("#edit-profile-button");
+const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__plus-button");
@@ -121,6 +121,7 @@ function handleCardSubmit(e){
   const link = cardUrlInput.value;
   renderCard({name, link}, cardListEl);
   closePopup(addNewModalCard);
+  addNewCardFormElement.reset();
 }
 
 function renderCard(cardData, wrapper){
