@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
@@ -37,6 +38,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.card__button-remove{
+  background: transparent url(../images/delete-button.svg);
+  cursor: pointer;
+  width: 18px;
+  height: 19px;
+  border: none;
+  position: absolute;
+  top: 18px;
+  left: 249px;
 }
 
 .card__like-button {
