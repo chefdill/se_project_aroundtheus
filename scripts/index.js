@@ -32,7 +32,7 @@ const initialCards = [
 ];
 
 /*Elements*/
-const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditButton = document.querySelector("#profile-edit");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__plus-button");
