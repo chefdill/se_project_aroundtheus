@@ -129,7 +129,7 @@ function renderCard(cardData, wrapper){
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  openPopup();
+  openPopup(profileEditModal);
 });
 
 /*forProfile*/

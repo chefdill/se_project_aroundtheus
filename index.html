@@ -25,10 +25,10 @@
           />
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
-            <button type="button" class="profile__edit-button" id= "profile-edit-button"></button>
+            <button type="profile-edit-button" class="profile__edit-button" id= "profile-edit-button"></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button type="button" class="profile__plus-button"></button>
+          <button type="profile-plus-button" class="profile__plus-button"></button>
         </section>
         <section class="cards page__section">
          <ul class="cards__list"></ul>
@@ -44,8 +44,8 @@
       <div class="modal__container">
         <button 
           class="modal__close" 
-          type = "button" 
-          id = "profile-edit-button">
+          type = "close-modal-button" 
+          id = "profile-edit-close-button">
         </button>
       <h2 class="modal__heading">Edit profile</h2>
         <form class="modal__form">
@@ -76,7 +76,7 @@
         <button 
           class="modal__close" 
           id = "add-card-close-button" 
-          type = "button">
+          type = "close-card-button">
         </button>
         <h2 class="modal__heading">New Place</h2>
         <form class="modal__form" id = "add-card-form">
@@ -106,7 +106,7 @@
       <div class="modal__container-picture">
       <button 
         class="modal__close" 
-        type = "button" 
+        type = "close-image-button" 
         id = "preview-image-close">
       </button>
       <img
