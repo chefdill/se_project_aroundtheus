@@ -125,8 +125,8 @@
 }
 
 .modal__image{
-  width: 75vw;
-  height: 75vh;
+  max-width: 75vw;
+  max-height: 75vh;
 }
 
 .modal__preview-title{
@@ -165,4 +165,14 @@
     font-size: 18px;
     line-height: 22px;
   }
+
+  .modal__image{
+    width: 240px;
+    height: 299px;
+    /* padding-left: 40px; */
+  }
+
+  /* .modal__preview-title{
+    padding-left: 40px;
+  } */
 }
