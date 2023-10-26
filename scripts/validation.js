@@ -1,10 +1,15 @@
-
-
-function showInputError(formEl, inputEl, {inputErrorClass}){
+function showInputError(formEl, inputEl, { inputErrorClass, errorClass }){
     const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(inputErrorClass);
     errorMessageEl.textContent = inputEl.validationMessage;
     errorMessageEl.classList.add(errorClass);
+}
+
+function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }){
+    const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+    inputEl.classList.remove(inputErrorClass);
+    errorMessageEl.textContent = "";
+    errorMessageEl.classList.remove(errorClass);
 }
 
 function checkInputValidity(formEl, inputEl, options){
@@ -66,8 +71,6 @@ function enableValidation(options){
         //enable button
         //reset error messages
 
-
-
   });
 }
 
@@ -75,9 +78,9 @@ const config = {
 formSelector: ".modal__form",
 inputSelector: ".modal__input",
 submitButtonSelector: ".modal__button",
-inactiveButtonClass: ".modal__button_disabled",
-inputErrorClass: ".modal__input_type_error",
-errorClass: ".modal__error"
+inactiveButtonClass: "modal__button_disabled",
+inputErrorClass: "modal__input_type_error",
+errorClass: "modal__error"
 }
 
 enableValidation(config); 
