@@ -57,13 +57,17 @@ const previewImageModalClose = document.querySelector(
   "#preview-image-close"
   );
 
+const inputElement = document.querySelector(".modal__input");
+
 /*Functions*/
 function openPopup(popup){
   popup.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEsc);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEsc);
 }
 
 function getCardElement(cardData) {
@@ -123,6 +127,13 @@ function handleCardSubmit(e){
 function renderCard(cardData, wrapper){
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
+}
+
+function handleEsc(e) {
+  if (e.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closePopup(modal);
+  }
 }
 
 /*EVENT LISTENERS*/
