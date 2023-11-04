@@ -69,7 +69,7 @@ function openPopup(popup){
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEsc);
-  document.removeEventListener("click", handleClick);
+  // document.removeEventListener("click", handleClick);
 }
 
 function getCardElement(cardData) {
@@ -138,12 +138,12 @@ function handleEsc(e) {
   }
 }
 
-function handleClick(e) {
-  if (e.mouse === "click") {
-    const modal = document.querySelector(".modal_opened");
-    closePopup(modal);
-  }
-}
+// function handleClick(e) {
+//   if (e.mouse === "click") {
+//     const modal = document.querySelector(".modal_opened");
+//     closePopup(modal);
+//   }
+// }
 
 
 /*EVENT LISTENERS*/
