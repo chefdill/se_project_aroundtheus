@@ -24,16 +24,16 @@ function hasInvalidInput(inputList){
     return !inputList.every((inputEl) => inputEl.validity.valid);
 }
 
-//enableButton
-function enableButton(inactiveButtonClass, button){
-    button.classList.remove(inactiveButtonClass);
-    button.disabled = false;
+//disableButton
+function disableButton(button, inactiveButtonClass){
+    button.classList.add(inactiveButtonClass);
+    button.disabled = true;
 }
 
-//disableButton
-function disableButton(inactiveButtonClass, button){
-button.classList.add(inactiveButtonClass);
-button.disabled = true;
+//enableButton
+function enableButton(button, inactiveButtonClass){
+    button.classList.remove(inactiveButtonClass);
+    button.disabled = false;
 }
 
     function toggleButtonState(inputEls, submitButton, options) {
