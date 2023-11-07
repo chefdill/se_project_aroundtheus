@@ -146,8 +146,7 @@ profileEditButton.addEventListener("click", () => {
 
 profileEditModal.addEventListener("mousedown", (e) => {
   if (
-    e.target.classList.contains("modal") ||
-    e.target.classList.contains("modal__form-close-button")
+    e.target.classList.contains("modal")
   ) {
     closePopup(profileEditModal);
   }
@@ -155,10 +154,17 @@ profileEditModal.addEventListener("mousedown", (e) => {
 
 addNewModalCard.addEventListener("mousedown", (e) => {
   if (
-    e.target.classList.contains("modal") ||
-    e.target.classList.contains("modal__form-close-button")
+    e.target.classList.contains("modal")
   ) {
     closePopup(addNewModalCard);
+  }
+});
+
+previewImageModal.addEventListener("mousedown", (e) => {
+  if (
+    e.target.classList.contains("modal")
+  ) {
+    closePopup(previewImageModal);
   }
 });
 
