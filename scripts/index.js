@@ -1,5 +1,5 @@
 import Card from "../components/Card.js";
-// import FormValidator from "../components/FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -43,17 +43,28 @@ const cardData = {
 const card = new Card(cardData);
 
 
-// const validationSettings = {
-//   formSelector: ".modal__form",
-// inputSelector: ".modal__input",
-// submitButtonSelector: ".modal__button",
-// inactiveButtonClass: "modal__button_disabled",
-// inputErrorClass: "modal__input_type_error",
-// errorClass: "modal__error"
-// }
+const validationSettings = {
+formSelector: ".modal__form",
+inputSelector: ".modal__input",
+submitButtonSelector: ".modal__button",
+inactiveButtonClass: "modal__button_disabled",
+inputErrorClass: "modal__input_type_error",
+errorClass: "modal__error"
+}
 
-// const editFormElement = editFormModalWindow.querySelector(".modal__form");
-// const addFormElement = cardFormModalWindow.querySelector(".modal__form");
+const editFormValidator = new FormValidator(
+  validationSettings,
+  document.querySelector("#profile-edit-modal")
+);
+
+editFormValidator.enableValidation();
+
+const cardFormValidator = new FormValidator(
+  validationSettings,
+  document.querySelector("#add-card-form")
+);
+
+cardFormValidator.enableValidation();
 
 /*Elements*/
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -150,7 +161,7 @@ function handleCardSubmit(e){
 
 function renderCard(cardData, wrapper){
   const cardElement = getCardElement(cardData, handleImageClick);
-  wrapper.prepend(cardElement);
+  wrapper.prepend(getView());
 }
 
 function handleEsc(e) {
