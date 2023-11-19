@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+// import FormValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -30,6 +33,27 @@ const initialCards = [
     alt: "Lago di Braies",
   },
 ];
+
+const cardData = {
+    name: "Yosemite Valley",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+    alt: "Yosemite Valley",
+};
+
+const card = new Card(cardData);
+
+
+// const validationSettings = {
+//   formSelector: ".modal__form",
+// inputSelector: ".modal__input",
+// submitButtonSelector: ".modal__button",
+// inactiveButtonClass: "modal__button_disabled",
+// inputErrorClass: "modal__input_type_error",
+// errorClass: "modal__error"
+// }
+
+// const editFormElement = editFormModalWindow.querySelector(".modal__form");
+// const addFormElement = cardFormModalWindow.querySelector(".modal__form");
 
 /*Elements*/
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -125,7 +149,7 @@ function handleCardSubmit(e){
 }
 
 function renderCard(cardData, wrapper){
-  const cardElement = getCardElement(cardData);
+  const cardElement = getCardElement(cardData, handleImageClick);
   wrapper.prepend(cardElement);
 }
 
@@ -136,6 +160,12 @@ function handleEsc(e) {
   }
 }
 
+function handleImageClick({ name, link }) {
+  previewImage.src = link;
+  previewImage.alt = name;
+  imageCaption.textContent = name;
+  openPopup(previewImage);
+}
 
 /*EVENT LISTENERS*/
 profileEditButton.addEventListener("click", () => {
