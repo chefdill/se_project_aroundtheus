@@ -34,15 +34,6 @@ const initialCards = [
   },
 ];
 
-// const cardData = {
-//     name: "Yosemite Valley",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-//     alt: "Yosemite Valley",
-// };
-
-// const card = new Card(cardData);
-
-
 const validationSettings = {
 formSelector: ".modal__form",
 inputSelector: ".modal__input",
@@ -105,36 +96,6 @@ function closePopup(modal) {
   document.removeEventListener("keydown", handleEsc);
 }
 
-// function getCardElement(cardData) {
-//   const cardElement = cardTemplate.cloneNode(true);
-//   const cardImageEl = cardElement.querySelector(".card__image");
-//   const cardTitleEl = cardElement.querySelector(".card__label-title");
-//   const cardLikeButton = cardElement.querySelector(".card__like-button");
-//   const cardRemoveButton = cardElement.querySelector(".card__button-remove");
-
-
-//   cardLikeButton.addEventListener("click", () => {
-//     cardLikeButton.classList.toggle("card__like-button_active");
-//   });
-
-//   cardRemoveButton.addEventListener("click", () => {
-//     cardElement.remove();
-//   });
-
-//   cardImageEl.src = cardData.link;
-//   cardImageEl.alt = cardData.alt;
-//   cardTitleEl.textContent = cardData.name;
-
-//   cardImageEl.addEventListener("click", function () {
-//     previewImage.src = cardData.link;
-//     previewImage.alt = cardData.name;
-//     previewImageTitle.textContent = cardData.name;
-//     openPopup(previewImageModal);
-//   });
-
-//   return cardElement;
-// }
-
 const cardTitleInput = addNewCardFormElement.querySelector
 (".modal__input_type_title");
 
@@ -160,7 +121,7 @@ function handleCardSubmit(e){
 }
 
 function renderCard(cardData, wrapper){
-  const card = new Card(cardData);
+  const card = new Card(cardData, "#card-template", handleImageClick);
   wrapper.prepend(card.getView());
 }
 
@@ -171,12 +132,12 @@ function handleEsc(e) {
   }
 }
 
-// function handleImageClick({ name, link }) {
-//   previewImage.src = link;
-//   previewImage.alt = name;
-//   previewImageTitle.textContent = name;
-//   openPopup(previewImage);
-// }
+function handleImageClick({ name, link }) {
+  previewImage.src = link;
+  previewImage.alt = name;
+  previewImageTitle.textContent = name;
+  openPopup(previewImage);
+}
 
 /*EVENT LISTENERS*/
 profileEditButton.addEventListener("click", () => {
