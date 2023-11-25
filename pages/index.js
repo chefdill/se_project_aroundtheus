@@ -35,12 +35,12 @@ const initialCards = [
 ];
 
 const validationSettings = {
-formSelector: ".modal__form",
-inputSelector: ".modal__input",
-submitButtonSelector: ".modal__button",
-inactiveButtonClass: "modal__button_disabled",
-inputErrorClass: "modal__input_type_error",
-errorClass: "modal__error"
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error"
 }
 
 const editFormValidator = new FormValidator(
@@ -139,6 +139,12 @@ function handleImageClick({ name, link }) {
   openPopup(previewImage);
 }
 
+function closeModalOnRemoteClick(e) {
+  if (e.target === e.currentTarget || e.target.classList.contains("modal_opened")) { 
+     closePopup(e.target)
+  }
+}
+
 /*EVENT LISTENERS*/
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
@@ -146,29 +152,40 @@ profileEditButton.addEventListener("click", () => {
   openPopup(profileEditModal);
 });
 
-profileEditModal.addEventListener("mousedown", (e) => {
-  if (
-    e.target.classList.contains("modal")
-  ) {
-    closePopup(profileEditModal);
-  }
-});
 
-addNewModalCard.addEventListener("mousedown", (e) => {
-  if (
-    e.target.classList.contains("modal")
-  ) {
-    closePopup(addNewModalCard);
-  }
-});
+profileEditModal.addEventListener("mousedown", closeModalOnRemoteClick);
+addNewModalCard.addEventListener("mousedown", closeModalOnRemoteClick);
+previewImageModal.addEventListener("mousedown", closeModalOnRemoteClick);
 
-previewImageModal.addEventListener("mousedown", (e) => {
-  if (
-    e.target.classList.contains("modal")
-  ) {
-    closePopup(previewImageModal);
-  }
-});
+// // when open a modal
+// modal.addEventListener("mousedown", closeModalOnRemoteClick)
+
+// when close a modal
+// modal.removeEventListener("mousedown", closeModalOnRemoteClick)
+
+// profileEditModal.addEventListener("mousedown", (e) => {
+//   if (
+//     e.target.classList.contains("modal")
+//   ) {
+//     closePopup(profileEditModal);
+//   }
+// });
+
+// addNewModalCard.addEventListener("mousedown", (e) => {
+//   if (
+//     e.target.classList.contains("modal")
+//   ) {
+//     closePopup(addNewModalCard);
+//   }
+// });
+
+// previewImageModal.addEventListener("mousedown", (e) => {
+//   if (
+//     e.target.classList.contains("modal")
+//   ) {
+//     closePopup(previewImageModal);
+//   }
+// });
 
 /*forProfile*/
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);

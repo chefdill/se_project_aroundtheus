@@ -104,12 +104,13 @@
 .modal__button_disabled{
   border-radius: 2px;
   border: 1px solid #000;
-  background: #f6f6f6;
+  background: gray;
 }
 
-.modal__button:hover {
+.modal__button_disabled:hover {
   opacity: 0.8;
   transition: 0.2s;
+  cursor: default;
 }
 
 .modal__button-text {
