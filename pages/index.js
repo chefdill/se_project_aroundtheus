@@ -83,7 +83,7 @@ const previewImageModalClose = document.querySelector(
   "#preview-image-close"
   );
 
-const inputElement = document.querySelector(".modal__input");
+const inputEl = document.querySelector(".modal__input");
 
 /*Functions*/
 function openPopup(popup){
@@ -136,11 +136,11 @@ function handleImageClick({ name, link }) {
   previewImage.src = link;
   previewImage.alt = name;
   previewImageTitle.textContent = name;
-  openPopup(previewImage);
+  openPopup(previewImageModal);
 }
 
 function closeModalOnRemoteClick(e) {
-  if (e.target === e.currentTarget || e.target.classList.contains("modal_opened")) { 
+  if (e.target === e.currentTarget || e.target.classList.contains("modal")) { 
      closePopup(e.target)
   }
 }
@@ -155,41 +155,12 @@ profileEditButton.addEventListener("click", () => {
 
 profileEditModal.addEventListener("mousedown", closeModalOnRemoteClick);
 addNewModalCard.addEventListener("mousedown", closeModalOnRemoteClick);
-previewImageModal.addEventListener("mousedown", closeModalOnRemoteClick);
-
-// // when open a modal
-// modal.addEventListener("mousedown", closeModalOnRemoteClick)
-
-// when close a modal
-// modal.removeEventListener("mousedown", closeModalOnRemoteClick)
-
-// profileEditModal.addEventListener("mousedown", (e) => {
-//   if (
-//     e.target.classList.contains("modal")
-//   ) {
-//     closePopup(profileEditModal);
-//   }
-// });
-
-// addNewModalCard.addEventListener("mousedown", (e) => {
-//   if (
-//     e.target.classList.contains("modal")
-//   ) {
-//     closePopup(addNewModalCard);
-//   }
-// });
-
-// previewImageModal.addEventListener("mousedown", (e) => {
-//   if (
-//     e.target.classList.contains("modal")
-//   ) {
-//     closePopup(previewImageModal);
-//   }
-// });
+previewImage.addEventListener("mousedown", closeModalOnRemoteClick);
 
 /*forProfile*/
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileEditCloseButton.addEventListener("click", () => {
+  cardFormValidator.resetValidation();
   closePopup(profileEditModal);
 });
 
