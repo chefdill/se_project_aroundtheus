@@ -160,7 +160,6 @@ previewImage.addEventListener("mousedown", closeModalOnRemoteClick);
 /*forProfile*/
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileEditCloseButton.addEventListener("click", () => {
-  cardFormValidator.resetValidation();
   closePopup(profileEditModal);
 });
 
@@ -170,10 +169,11 @@ previewImageModalClose.addEventListener("click", () => {
 
 /*forCards*/
 addNewModalCard.addEventListener("submit", handleCardSubmit);
-addNewCardButton.addEventListener("click", () => 
+cardFormValidator.resetValidation();
+addNewCardButton.addEventListener("click", () =>
   openPopup(addNewModalCard)
 );
-addCardCloseButton.addEventListener("click", () => 
+addCardCloseButton.addEventListener("click", () =>
   closePopup(addNewModalCard)
 );
 

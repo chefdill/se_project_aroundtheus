@@ -34,7 +34,6 @@
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   pointer-events: all;
   opacity: 1;
@@ -98,6 +97,10 @@
   border-radius: 2px;
   background-color: #000;
   border: none;
+}
+
+.modal__button:hover{
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -105,10 +108,7 @@
   border-radius: 2px;
   border: 1px solid #000;
   background: gray;
-}
-
-.modal__button_disabled:hover {
-  opacity: 0.8;
+  opacity: 1;
   transition: 0.2s;
   cursor: default;
 }
