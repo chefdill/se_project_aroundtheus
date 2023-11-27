@@ -169,10 +169,11 @@ previewImageModalClose.addEventListener("click", () => {
 
 /*forCards*/
 addNewModalCard.addEventListener("submit", handleCardSubmit);
-addNewCardButton.addEventListener("click", () =>
-  cardFormValidator.resetValidation()
+addNewCardButton.addEventListener("click", () => {
   openPopup(addNewModalCard)
-);
+  cardFormValidator.resetValidation()
+});
+
 addCardCloseButton.addEventListener("click", () =>
   closePopup(addNewModalCard)
 );

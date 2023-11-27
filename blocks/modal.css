@@ -104,12 +104,16 @@
   cursor: pointer;
 }
 
+.modal__button_disabled:hover {
+  opacity: 1;
+  cursor: default;
+} 
+
 .modal__button_disabled{
   border-radius: 2px;
   border: 1px solid #000;
   background: gray;
   opacity: 1;
-  transition: 0.2s;
   cursor: default;
 }
 
