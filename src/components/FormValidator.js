@@ -8,9 +8,7 @@ export default class FormValidator {
       this._errorClass = validationSettings.errorClass;
   
       // Save elements in the class instance
-      this._inputEls = this._formEl.querySelectorAll(
-        this._inputSelector
-      );
+      this._inputEls =  [...this._formEl.querySelectorAll(this._inputSelector)];
       this._submitButton = this._formEl.querySelector(
         this._submitButtonSelector
       );
