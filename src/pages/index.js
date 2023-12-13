@@ -19,7 +19,8 @@ import{
 const editFormValidator = new FormValidator(
   validationSettings,
   document.querySelector("#profile-edit-modal")
-);
+  );
+
 
 editFormValidator.enableValidation();
 
