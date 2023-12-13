@@ -14,6 +14,8 @@ import{
   validationSettings,
   profileTitleInput,
   profileDescriptionInput,
+  profileEditButton,
+  addNewCardButton,
 } from "../utils/constants.js";
 
 const editFormValidator = new FormValidator(
