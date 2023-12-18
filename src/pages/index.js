@@ -27,15 +27,14 @@ const editFormValidator = new FormValidator(
   validationSettings
 );
 
+const userInfo = new UserInfo("#profile-title-input", "#profile-description-input");
+
 profileEditButton.addEventListener("click", () => {
   const { name, job } = userInfo.getUserInfo();
   profileTitleInput.value = name;
   profileDescriptionInput.value = job;
   profileEditFormPopup.open();
 });
-
-
-const userInfo = new UserInfo("#profile-title", "#profile-description");
 
 const profileEditFormPopup = new PopupWithForm(
   "#profile-edit-modal",
@@ -49,7 +48,7 @@ document.querySelector(".profile__plus-button").addEventListener("click", () => 
 });
 
 function handleAddCardFormSubmit(formData) {
-  const card = createCard({ name: formData.title, link: formData.url });
+  const card = createCard({ name: formData.name, link: formData.url });
   cardSection.addItem(card);
   addCardPopup.close();
 }
@@ -70,7 +69,7 @@ const cardSection = new Section(
   {
     items: initialCards,
     renderer: (cardData) => {
-      const cardEl = createCard(cardData);
+      const cardListEl = createCard(cardData);
       cardSection.addItem(cardListEl);
     },
   },
@@ -81,7 +80,7 @@ cardSection.renderItems();
 
 editFormValidator.enableValidation();
 
-const popupWithImage = new PopupWithImage("#preview-image-modal");
+const popupWithImage = new PopupWithImage(".modal__image");
 popupWithImage.setEventListeners();
 
 function handleProfileEditFormSubmit(formData) {

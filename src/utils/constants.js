@@ -47,6 +47,6 @@ export const initialCards = [
     "#profile-description-input"
   );
 
-  export const addNewModalCard = document.querySelector("#add-card-modal");
+  export const addNewModalCard = document.querySelector("#add-card-form");
   export const cardListEl = document.querySelector(".cards__list");
   export const addNewCardButton = document.querySelector(".profile__plus-button");
