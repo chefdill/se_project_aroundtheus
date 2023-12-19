@@ -61,7 +61,7 @@ addCardPopup.setEventListeners();
 
 function createCard(cardData) {
   return new Card(cardData, "#card-template", () => {
-    popupWithImage.open(cardData.name, cardData.link);
+    popupWithImage.open(cardData.link, cardData.name);
   }).getView();
 }
 
@@ -80,7 +80,7 @@ cardSection.renderItems();
 
 editFormValidator.enableValidation();
 
-const popupWithImage = new PopupWithImage(".modal__image");
+const popupWithImage = new PopupWithImage("#modal-preview");
 popupWithImage.setEventListeners();
 
 function handleProfileEditFormSubmit(formData) {
