@@ -27,12 +27,12 @@ const editFormValidator = new FormValidator(
   validationSettings
 );
 
-const userInfo = new UserInfo("#profile-title-input", "#profile-description-input");
+const userInfo = new UserInfo(".profile__title", ".profile__description");
 
 profileEditButton.addEventListener("click", () => {
-  const { name, job } = userInfo.getUserInfo();
-  profileTitleInput.value = name;
-  profileDescriptionInput.value = job;
+  const profileUserInfo = userInfo.getUserInfo();
+  profileTitleInput.textcontent = profileUserInfo.name;
+  profileDescriptionInput.textcontent = profileUserInfo.job;
   profileEditFormPopup.open();
 });
 
@@ -48,7 +48,7 @@ document.querySelector(".profile__plus-button").addEventListener("click", () => 
 });
 
 function handleAddCardFormSubmit(formData) {
-  const card = createCard({ name: formData.name, link: formData.url });
+  const card = createCard({ name: formData.title, link: formData.url });
   cardSection.addItem(card);
   addCardPopup.close();
 }

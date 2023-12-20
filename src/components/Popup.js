@@ -18,7 +18,7 @@ export default class Popup {
     _handleEscClose = (e) => {
         //listens for esc button
           if (e.key === "Escape") {
-            this._handleEscClose;
+            this.close();
           }      
         };
 

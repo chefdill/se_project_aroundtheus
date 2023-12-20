@@ -7,6 +7,8 @@
 - Images
 - Features
 - Github
+- Webpack
+- node.js
 
 **Intro**
 
@@ -16,6 +18,12 @@ This project is for the person that has traveled to all of these national and ou
 
 - Used Figma platform to reference the project that was made.
 - Link to the project on Figma: https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1
+
+**Webpack**
+
+- Installed webpack and node.js to add package.json and node_modules. Gitignore to ignore the node_modules and dist folders. Used npm run dev to pull up my localhost8080 instead of Go Live.
+- Added babel.config.js, postcss.config.js.
+
 
 **Images**
 
