@@ -87,6 +87,6 @@ const popupWithImage = new PopupWithImage("#modal-preview");
 popupWithImage.setEventListeners();
 
 function handleProfileEditFormSubmit(formData) {
-  userInfo.setUserInfo(formData.title, formData.description);
+  userInfo.setUserInfo(formData.name, formData.description);
   profileEditFormPopup.close();
 }
