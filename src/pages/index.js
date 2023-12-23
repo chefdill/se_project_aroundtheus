@@ -31,8 +31,8 @@ const userInfo = new UserInfo(".profile__title", ".profile__description");
 
 profileEditButton.addEventListener("click", () => {
   const profileUserInfo = userInfo.getUserInfo();
-  profileTitleInput.textcontent = profileUserInfo.name;
-  profileDescriptionInput.textcontent = profileUserInfo.description;
+  profileTitleInput.value = profileUserInfo.title;
+  profileDescriptionInput.value = profileUserInfo.description;
   profileEditFormPopup.open();
 });
 
@@ -43,9 +43,6 @@ const profileEditFormPopup = new PopupWithForm(
 profileEditFormPopup.setEventListeners();
 
 document.querySelector(".profile__plus-button").addEventListener("click", () => {
-  // const setInfo = userInfo.setUserInfo();
-  // profileEditModal.textcontent = setInfo.name;
-  // profileEditModal.textcontent = setInfo.job;
   cardFormValidator.toggleButtonState();
   addCardPopup.open();
 });
