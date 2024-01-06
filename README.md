@@ -6,7 +6,7 @@
 - Figma
 - Images
 - Features
-- Github
+- Github (switched to git branch project-9)
 - Webpack
 - node.js
 
