@@ -19,7 +19,7 @@ class Api {
   });
 }
 }
-
+console.log(Api);
 
 //   {"user":
 //     {"name":"Jacques Cousteau",
