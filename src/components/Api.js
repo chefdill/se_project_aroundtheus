@@ -1,30 +1,25 @@
 class Api {
     constructor(options) {
       // constructor body
+      this._header = options._headers;
     }
   
     getInitialCards() {
-      return fetch("https://around-api.en.tripleten-services.com/v1",, {
+      return fetch("https://around-api.en.tripleten-services.com/v1", {
         headers: {
             authorization: "9074552f-5489-49c7-bab8-7f6a130e519f"
         }
       })
       .then(res => {
-        if res (res.ok) {
+        if (res.ok) {
             return res.json();// ...
     }
-  
+    return Promise.reject(`Error: ${res.status}`);
     // other methods for working with the API
   });
 }
-  
-  const api = new Api({
-    baseUrl: "https://around-api.en.tripleten-services.com/v1",
-    headers: {
-      authorization: "9074552f-5489-49c7-bab8-7f6a130e519f",
-      "Content-Type": "application/json"
-    }
-  });
+}
+
 
 //   {"user":
 //     {"name":"Jacques Cousteau",
