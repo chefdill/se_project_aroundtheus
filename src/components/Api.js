@@ -40,7 +40,13 @@ loadInfo() {
 
 editProfile(){
 
-    return fetch("https://around-api.en.tripleten-services.com/v1/users/me")
+    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
+        method: "PATCH",
+        headers: {
+            authorization: "9074552f-5489-49c7-bab8-7f6a130e519f", 
+            "Content-type": "application/json",
+        }
+    })
 
     }
 
