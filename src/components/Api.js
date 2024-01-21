@@ -14,8 +14,14 @@ export default class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getInitialUser() {
+  getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
+
+  getInitialCards() {
+    return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
     }).then(this._checkResponse);
   }
