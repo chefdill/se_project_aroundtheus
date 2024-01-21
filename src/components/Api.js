@@ -21,27 +21,6 @@ export default class Api {
   }
 
 }
-
-
-//    .then(res => {
-//     if (res.ok) {
-//       return res.json();
-//     }
-//     // if the server returns an error, reject the promise
-//     return Promise.reject(`Error: ${res.status}`);
-//   });
-//   }
-
-//   // other methods for working with the API
-// }
-
-const api = new Api({
-  baseUrl: "https://around-api.en.tripleten-services.com/v1",
-  headers: {
-    authorization: "f00dbe4d-3bcf-40e3-a46f-9e1ed8206bd5",
-    "Content-Type": "application/json"
-  }
-}); 
 // 1 LOADING USER INFORMATION INTO THE SERVER
 // GET https://around-api.en.tripleten-services.com/v1/users/me 
   //{  **this should be the response if working correctly** 
