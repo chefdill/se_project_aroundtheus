@@ -6,15 +6,23 @@ export default class Api {
       "Content-type": "application/json",
     };
   }
+  
+  _getResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  }
+
+  getInitialCards() {
+    return fetch(`${this._baseUrl}/cards`, {
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
+
 }
 
-//   getInitialCards() {
-//    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
-//     method: "GET",
-//     headers: {
-//       authorization: "f00dbe4d-3bcf-40e3-a46f-9e1ed8206bd5"
-//     }
-//    })
+
 //    .then(res => {
 //     if (res.ok) {
 //       return res.json();
