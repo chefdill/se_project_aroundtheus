@@ -6,7 +6,7 @@ export default class Api {
       "Content-type": "application/json",
     };
   }
-  
+
   _getResponse(res) {
     if (res.ok) {
       return res.json();
@@ -14,8 +14,8 @@ export default class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
+  getInitialUser() {
+    return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     }).then(this._checkResponse);
   }
