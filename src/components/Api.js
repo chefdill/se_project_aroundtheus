@@ -1,26 +1,31 @@
-class Api {
-  constructor(options) {
-    // constructor body
+export default class Api {
+  constructor() {
+    this._baseUrl = "https://around-api.en.tripleten-services.com/v1";
+    this._headers = {
+      authorization: "f00dbe4d-3bcf-40e3-a46f-9e1ed8206bd5",
+      "Content-type": "application/json",
+    };
   }
-
-  getInitialCards() {
-   return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
-    method: "GET",
-    headers: {
-      authorization: "f00dbe4d-3bcf-40e3-a46f-9e1ed8206bd5"
-    }
-   })
-   .then(res => {
-    if (res.ok) {
-      return res.json();
-    }
-    // if the server returns an error, reject the promise
-    return Promise.reject(`Error: ${res.status}`);
-  });
-  }
-
-  // other methods for working with the API
 }
+
+//   getInitialCards() {
+//    return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
+//     method: "GET",
+//     headers: {
+//       authorization: "f00dbe4d-3bcf-40e3-a46f-9e1ed8206bd5"
+//     }
+//    })
+//    .then(res => {
+//     if (res.ok) {
+//       return res.json();
+//     }
+//     // if the server returns an error, reject the promise
+//     return Promise.reject(`Error: ${res.status}`);
+//   });
+//   }
+
+//   // other methods for working with the API
+// }
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
