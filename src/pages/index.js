@@ -27,7 +27,7 @@ const api = new Api({
   }
 }); 
 
-api.getUserInfo().then((UserInfo) => {
+api.userInfo().then((UserInfo) => {
   userInfo.setUserInfo(UserInfo.name, UserInfo.about);
 });
 
