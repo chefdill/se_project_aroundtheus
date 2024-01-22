@@ -91,6 +91,13 @@ api.getUserInfo().then((UserInfo) => {
   userInfo.getUserInfo(UserInfo.name, UserInfo.about);
 });
 
+api.getInitialCards().then((cards) => {
+  cards.forEach((card) => {
+    const cardElemet = generateCard(card);
+    cardSection.addItem(cardElemet);
+  });
+});
+
 //Event Listeners
 
 profileEditButton.addEventListener("click", () => {
