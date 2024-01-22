@@ -19,6 +19,18 @@ import{
   addNewCardButton,
 } from "../utils/constants.js";
 
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "f00dbe4d-3bcf-40e3-a46f-9e1ed8206bd5",
+    "Content-Type": "application/json"
+  }
+}); 
+
+api.getUserInfo().then((UserInfo) => {
+  profileUserInfo(UserInfo.name, UserInfo.about);
+});
+
 const cardFormValidator = new FormValidator(addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
 

@@ -15,9 +15,16 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers,
-    }).then(this._checkResponse);
+    // return fetch(`${this._baseUrl}/users/me`, {
+    //   headers: this._headers,
+    // }).then(this._checkResponse);
+    fetch (`${this._baseUrl}/users/me`)
+    .then (response => {
+      if (response.ok) {
+        console.log("NOT THE RESPONSE");
+      }
+      return response.json();
+    })
   }
 
   getInitialCards() {
