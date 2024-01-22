@@ -19,6 +19,8 @@ import{
   addNewCardButton,
 } from "../utils/constants.js";
 
+//Variables
+
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -26,10 +28,6 @@ const api = new Api({
     "Content-Type": "application/json"
   }
 }); 
-
-api.getUserInfo().then((UserInfo) => {
-  profileUserInfo(UserInfo.name, UserInfo.about);
-});
 
 const cardFormValidator = new FormValidator(addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
@@ -42,42 +40,6 @@ const editFormValidator = new FormValidator(
 
 const userInfo = new UserInfo(".profile__title", ".profile__description");
 
-profileEditButton.addEventListener("click", () => {
-  const profileUserInfo = userInfo.getUserInfo();
-  profileTitleInput.value = profileUserInfo.title;
-  profileDescriptionInput.value = profileUserInfo.description;
-  profileEditFormPopup.open();
-});
-
-const profileEditFormPopup = new PopupWithForm(
-  "#profile-edit-modal",
-  handleProfileEditFormSubmit
-);
-profileEditFormPopup.setEventListeners();
-
-document.querySelector(".profile__plus-button").addEventListener("click", () => {
-  cardFormValidator.toggleButtonState();
-  addCardPopup.open();
-});
-
-function handleAddCardFormSubmit(formData) {
-  const card = createCard({ name: formData.title, link: formData.url });
-  cardSection.addItem(card);
-  addCardPopup.close();
-}
-
-const addCardPopup = new PopupWithForm(
-  "#add-card-modal",
-  handleAddCardFormSubmit
-);
-addCardPopup.setEventListeners();
-
-function createCard(cardData) {
-  return new Card(cardData, "#card-template", () => {
-    popupWithImage.open(cardData.link, cardData.name);
-  }).getView();
-}
-
 const cardSection = new Section(
   {
     items: initialCards,
@@ -89,14 +51,59 @@ const cardSection = new Section(
   ".cards__list"
 );
 
-cardSection.renderItems();
-
-editFormValidator.enableValidation();
+const profileEditFormPopup = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditFormSubmit
+);
 
 const popupWithImage = new PopupWithImage("#modal-preview");
 popupWithImage.setEventListeners();
+
+const addCardPopup = new PopupWithForm(
+  "#add-card-modal",
+  handleAddCardFormSubmit
+);
+
+//functions
+
+function handleAddCardFormSubmit(formData) {
+  const card = createCard({ name: formData.title, link: formData.url });
+  cardSection.addItem(card);
+  addCardPopup.close();
+}
+
+function createCard(cardData) {
+  return new Card(cardData, "#card-template", () => {
+    popupWithImage.open(cardData.link, cardData.name);
+  }).getView();
+}
 
 function handleProfileEditFormSubmit(formData) {
   userInfo.setUserInfo(formData.title, formData.description);
   profileEditFormPopup.close();
 }
+
+cardSection.renderItems();
+
+editFormValidator.enableValidation();
+
+api.getUserInfo().then((UserInfo) => {
+  profileUserInfo(UserInfo.name, UserInfo.about);
+});
+
+//Event Listeners
+
+profileEditButton.addEventListener("click", () => {
+  const profileUserInfo = userInfo.getUserInfo();
+  profileTitleInput.value = profileUserInfo.title;
+  profileDescriptionInput.value = profileUserInfo.description;
+  profileEditFormPopup.open();
+});
+
+addCardPopup.setEventListeners();
+profileEditFormPopup.setEventListeners();
+
+document.querySelector(".profile__plus-button").addEventListener("click", () => {
+  cardFormValidator.toggleButtonState();
+  addCardPopup.open();
+});
