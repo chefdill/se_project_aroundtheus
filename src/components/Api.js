@@ -70,6 +70,14 @@ export default class Api {
         headers: this._headers,
       }).then(this._checkResponse);
     }
+
+    changeAvatar(avatarUrl) {
+      return fetch(`${this._baseUrl}/users/me/avatar`, {
+        method: "PATCH",
+        headers: this._headers,
+        body: JSON.stringify({ avatarUrl: avatarUrl }),
+      }).then(this._checkResponse);
+    }
   }
     // The cardId in the URL should be replaced with the _id parameter of the card to be deleted. 
     // The _id of each card is found in its respective JSON:
@@ -84,4 +92,3 @@ export default class Api {
   
 
 
-// 7 - 9 look back at program lets get 1 - 6 done first
