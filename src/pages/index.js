@@ -28,7 +28,7 @@ const api = new Api({
 }); 
 
 api.getUserInfo().then((UserInfo) => {
-  profileUserInfo(UserInfo.name, UserInfo.about);
+  userInfo.setUserInfo(UserInfo.name, UserInfo.about);
 });
 
 const cardFormValidator = new FormValidator(addNewModalCard, validationSettings);
