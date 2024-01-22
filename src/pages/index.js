@@ -88,7 +88,7 @@ cardSection.renderItems();
 editFormValidator.enableValidation();
 
 api.getUserInfo().then((UserInfo) => {
-  profileUserInfo(UserInfo.name, UserInfo.about);
+  userInfo.getUserInfo(UserInfo.name, UserInfo.about);
 });
 
 //Event Listeners
