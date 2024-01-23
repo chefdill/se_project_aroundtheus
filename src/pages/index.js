@@ -91,10 +91,10 @@ function handleAddCardFormSubmit(inputValues) {
     })
     .catch(console.error)
     .finally(() => {
-      setButtonText(addNewCardButton, "Save");
+      setButtonText(variables.addNewCardButton, "Save");
     });
 
-    const deleteModal = new PopupWithDelete(variables.deleteCardClass);
+    const deleteModal = new PopupWithDelete(variables.deleteModal);
     deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
