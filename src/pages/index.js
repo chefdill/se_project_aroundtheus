@@ -7,18 +7,10 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithDelete from "../components/PopupWithDelete.js";
 import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
-
-import{
-  initialCards,
-  addNewModalCard,
-  profileEditModal,
-  cardListEl,
-  validationSettings,
-  profileTitleInput,
-  profileDescriptionInput,
-  profileEditButton,
-  addNewCardButton,
-} from "../utils/constants.js";
+import {
+  initialCards, 
+  validationSettings, 
+  variables} from "../utils/constants.js";
 
 //Variables
 
@@ -30,7 +22,7 @@ const api = new Api({
   }
 }); 
 
-const cardFormValidator = new FormValidator(addNewModalCard, validationSettings);
+const cardFormValidator = new FormValidator(variables.addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
@@ -67,23 +59,23 @@ const addCardPopup = new PopupWithForm(
 
 //functions
 
-function createCard(cardData) {
-  const card = new Card(
-    cardData,
-    "#card-template",
-    handleImageClick,
-    handleDeleteClick,
-    handleLikeClick
-  );
-  section.addItem(card.generateCard());
-}
+// function createCard(cardData) {
+//   const card = new Card(
+//     cardData,
+//     "#card-template",
+//     handleImageClick,
+//     handleDeleteClick,
+//     handleLikeClick
+//   );
+//   section.addItem(card.generateCard());
+// }
 
 function setButtonText(button, text) {
   button.textContent = text;
 }
 
 function handleAddCardFormSubmit(inputValues) {
-  setButtonText(addNewCardButton, "Saving...");
+  setButtonText(variables.addNewCardButton, "Saving...");
   api
     .addNewCard(inputValues)
     .then((res) => {
@@ -91,7 +83,7 @@ function handleAddCardFormSubmit(inputValues) {
       // create a new card
       createCard(res);
       // render it
-      addNewModalCard.reset();
+      variables.addNewModalCard.reset();
       // toggle button state
       cardFormValidator.toggleButtonState();
       // close modal
