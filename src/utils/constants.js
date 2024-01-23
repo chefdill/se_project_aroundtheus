@@ -1,4 +1,4 @@
-export const initialCards = [
+  const initialCards = [
     {
       name: "Yosemite Valley",
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -31,7 +31,7 @@ export const initialCards = [
     },
   ];
 
-  export const validationSettings = {
+    const validationSettings = {
     formSelector: ".modal__form",
     inputSelector: ".modal__input",
     submitButtonSelector: ".modal__button",
@@ -40,13 +40,21 @@ export const initialCards = [
     errorClass: "modal__error"
   };
 
-  export const profileEditButton = document.querySelector("#profile-edit-button");
-  export const profileEditModal = document.querySelector("#profile-edit-modal");
-  export const profileTitleInput = document.querySelector("#profile-title-input");
-  export const profileDescriptionInput = document.querySelector(
-    "#profile-description-input"
-  );
+  const variables = {
+      profileEditButton: document.querySelector("#profile-edit-button"),
+      profileEditModal: document.querySelector("#profile-edit-modal"),
+      profileTitleInput: document.querySelector("#profile-title-input"),
+      profileDescriptionInput: document.querySelector("#profile-description-input"),
+      profileImage: document.querySelector(".profile__image"),
+      addNewModalCard: document.querySelector("#add-card-form"),
+      cardListEl: document.querySelector(".cards__list"),
+      addNewCardButton: document.querySelector(".profile__plus-button"),
+      deleteModal: document.querySelector("#delete-modal"),
+      avatarInput: document.querySelector("#avatar-url-input"),
+      avatarModal: document.querySelector("#avatar-modal"),
+      avatarModalButton: document.querySelector("#avatar-modal-button"),
+    
+    }
 
-  export const addNewModalCard = document.querySelector("#add-card-form");
-  export const cardListEl = document.querySelector(".cards__list");
-  export const addNewCardButton = document.querySelector(".profile__plus-button");
+
+export {initialCards, validationSettings, variables};
