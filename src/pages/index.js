@@ -112,6 +112,21 @@ function handleDeleteClick(card) {
   });
 }
 }
+
+function handleAvatarFormSubmit(inputValues) {
+  setButtonText(variables.avatarModalButton, "Saving...");
+  api
+    .updateAvatar(inputValues.link)
+    .then((res) => {
+      userinfo.setAvatar(res.avatar);
+      console.log(res);
+      avatarModal.close();
+    })
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(variables.avatarModalButton, "Save");
+    });
+}
 // function handleAddCardFormSubmit(formData) {
 //   const card = createCard({ name: formData.title, link: formData.url });
 //   cardSection.addItem(card);
