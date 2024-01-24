@@ -25,7 +25,7 @@ const api = new Api({
 const cardFormValidator = new FormValidator(variables.addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
 
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEditForm = variables.profileEditModal.querySelector(".modal__form");
 const editFormValidator = new FormValidator(
   profileEditForm,
   validationSettings
