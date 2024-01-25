@@ -118,7 +118,7 @@ function handleAvatarFormSubmit(inputValues) {
   api
     .updateAvatar(inputValues.link)
     .then((res) => {
-      userinfo.setAvatar(res.avatar);
+      userInfo.setAvatar(res.avatar);
       console.log(res);
       avatarModal.close();
     })
@@ -179,7 +179,7 @@ api
   .catch(console.error);
 
 api
-  .loadInfo()
+  .getUserInfo()
   .then((res) => {
     console.log(res);
     userInfo.setUserInfo(res.name, res.about);
