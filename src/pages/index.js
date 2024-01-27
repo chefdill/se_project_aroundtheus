@@ -25,6 +25,9 @@ const api = new Api({
 const cardFormValidator = new FormValidator(variables.addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
 
+const avatarFormValidator = new FormValidator(variables.avatarModal, validationSettings);
+avatarFormValidator.enableValidation();
+
 const profileEditForm = variables.profileEditModal.querySelector(".modal__form");
 const editFormValidator = new FormValidator(
   profileEditForm,
@@ -45,7 +48,7 @@ const cardSection = new Section(
 );
 
 const profileEditFormPopup = new PopupWithForm(
-  "#profile-edit-modal",
+  variables.profileEditModal,
   handleProfileEditFormSubmit
 );
 
@@ -53,9 +56,12 @@ const popupWithImage = new PopupWithImage("#modal-preview");
 popupWithImage.setEventListeners();
 
 const addCardPopup = new PopupWithForm(
-  "#add-card-modal",
+  variables.addNewModalCard,
   handleAddCardFormSubmit
 );
+
+const avatarModal = new PopupWithForm(variables.avatarModal, handleAvatarFormSubmit);
+avatarModal.setEventListeners();
 
 //functions
 
@@ -69,6 +75,9 @@ const addCardPopup = new PopupWithForm(
 //   );
 //   section.addItem(card.generateCard());
 // }
+function openAvatarForm() {
+  avatarModal.open();
+}
 
 function setButtonText(button, text) {
   button.textContent = text;
@@ -106,7 +115,7 @@ function handleDeleteClick(card) {
       .deleteCard(card._id)
       .then(() => {
         deleteModal.close();
-        card.handleDelete();
+        card._handleDeleteCard();
       })
       .catch(console.error);
   });
@@ -144,6 +153,10 @@ function handleProfileEditFormSubmit(formData) {
   profileEditFormPopup.close();
 }
 
+profileEditButton.addEventListener("click", () => {
+  openAvatarForm();
+})
+
 cardSection.renderItems();
 
 editFormValidator.enableValidation();
@@ -154,8 +167,8 @@ api.getUserInfo().then((UserInfo) => {
 
 api.getInitialCards().then((cards) => {
   cards.forEach((card) => {
-    const cardElemet = generateCard(card);
-    cardSection.addItem(cardElemet);
+    const cardElement = generateCard(card);
+    cardSection.addItem(cardElement);
   });
 });
 
