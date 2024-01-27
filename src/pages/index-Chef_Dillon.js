@@ -153,7 +153,7 @@ function handleProfileEditFormSubmit(formData) {
   profileEditFormPopup.close();
 }
 
-variables.profileEditButton.addEventListener("click", () => {
+profileEditButton.addEventListener("click", () => {
   openAvatarForm();
 })
 
