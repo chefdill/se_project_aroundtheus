@@ -7,7 +7,7 @@ export default class FormValidator {
       this._inactiveButtonClass = validationSettings.inactiveButtonClass;
       this._inputErrorClass = validationSettings.inputErrorClass;
       this._errorClass = validationSettings.errorClass;
-      this._inputEls = [...this._formEl.querySelectorAll("modal__input")];
+      this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
     }
   
     _checkInputValidity(inputEl) {
