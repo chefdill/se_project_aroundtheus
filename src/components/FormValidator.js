@@ -1,5 +1,5 @@
 class FormValidator {
-    constructor(validationSettings, formSelector) {
+    constructor( formSelector, validationSettings ) {
       this._inputSelector = validationSettings.inputSelector;
       this._submitButtonSelector = validationSettings.submitButtonSelector;
       this._inactiveButtonClass = validationSettings.inactiveButtonClass;
@@ -63,3 +63,4 @@ class FormValidator {
     }
   }
   export default FormValidator;
+
