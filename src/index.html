@@ -118,6 +118,61 @@
       </div>
     </div>
 
+    <!-- Delete Card -->
+    <div class="modal" id="delete-modal">
+      <div class="modal__container">
+        <button
+          aria-label="Name"
+          type="button"
+          class="modal__close"
+          id="modal-delete-button-close"
+        ></button>
+        <form class="modal__form" id="delete-card-form">
+          <h2 class="modal__heading">Are You Sure?</h2>
+          <button
+            type="submit"
+            class="modal__container-button"
+            id="delete-card-button"
+          >
+            Yes
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Change Avatar -->
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          aria-label="Name"
+          type="button"
+          class="modal__close"
+          id="modal-avatar-button-close"
+        ></button>
+        <form class="modal__form" id="avatar-form">
+          <h2 class="modal__heading">Change Profile Picture</h2>
+          <input
+            class="modal__input"
+            type="url"
+            name="link"
+            id="avatar-url-input"
+            placeholder="Avatar URL"
+            required
+          />
+          <span class="modal__input-error" id="avatar-url-input-error"
+            >Fill out this field</span
+          >
+          <button
+            type="submit"
+            class="modal__container-button modal__container-button_disabled"
+            id="avatar-modal-button"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
  <!-- Image Preview -->
      <div class="modal" id="modal-preview">
       <div class="modal__container-picture">
