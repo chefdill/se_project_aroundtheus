@@ -147,12 +147,6 @@ function handleAvatarFormSubmit(inputValues) {
 //   addCardPopup.close();
 // }
 
-function createCard(cardData) {
-  return new Card(cardData, "#card-template", () => {
-    popupWithImage.open(cardData.link, cardData.name);
-  }).getView();
-}
-
 function handleProfileEditFormSubmit(formData) {
   userInfo.setUserInfo(formData.title, formData.description);
   profileEditFormPopup.close();
