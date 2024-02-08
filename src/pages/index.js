@@ -25,9 +25,6 @@ const api = new Api({
 const cardFormValidator = new FormValidator(variables.addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
 
-const avatarFormValidator = new FormValidator(variables.avatarModal, validationSettings);
-avatarFormValidator.enableValidation();
-
 const profileEditForm = variables.profileEditModal.querySelector(".modal__form");
 const editFormValidator = new FormValidator(
   profileEditForm,
@@ -48,35 +45,43 @@ const cardSection = new Section(
 );
 
 const profileEditFormPopup = new PopupWithForm(
-  variables.profileEditModal,
+  "#profile-edit-modal",
   handleProfileEditFormSubmit
 );
+
+const avatarModal = new PopupWithForm(
+  variables.avatarModal,
+  handleAvatarFormSubmit
+);
+avatarModal.setEventListeners();
+
+function openAvatarForm() {
+  avatarModal.open();
+}
+
+validationSettings.profileImage.addEventListener("click", () => {
+  openAvatarForm();
+});
 
 const popupWithImage = new PopupWithImage("#modal-preview");
 popupWithImage.setEventListeners();
 
 const addCardPopup = new PopupWithForm(
-  variables.addNewModalCard,
+  "#add-card-modal",
   handleAddCardFormSubmit
 );
 
-const avatarModal = new PopupWithForm(variables.avatarModal, handleAvatarFormSubmit);
-avatarModal.setEventListeners();
-
 //functions
 
-// function createCard(cardData) {
-//   const card = new Card(
-//     cardData,
-//     "#card-template",
-//     handleImageClick,
-//     handleDeleteClick,
-//     handleLikeClick
-//   );
-//   section.addItem(card.generateCard());
-// }
-function openAvatarForm() {
-  avatarModal.open();
+function createCard(cardData) {
+  const card = new Card(
+    cardData,
+    "#card-template",
+    handleImageClick,
+    handleDeleteClick,
+    handleLikeClick
+  );
+  section.addItem(card.generateCard());
 }
 
 function setButtonText(button, text) {
@@ -115,7 +120,7 @@ function handleDeleteClick(card) {
       .deleteCard(card._id)
       .then(() => {
         deleteModal.close();
-        card._handleDeleteCard();
+        card.handleDelete();
       })
       .catch(console.error);
   });
@@ -153,10 +158,6 @@ function handleProfileEditFormSubmit(formData) {
   profileEditFormPopup.close();
 }
 
-variables.profileEditButton.addEventListener("click", () => {
-  openAvatarForm();
-})
-
 cardSection.renderItems();
 
 editFormValidator.enableValidation();
@@ -167,8 +168,8 @@ api.getUserInfo().then((UserInfo) => {
 
 api.getInitialCards().then((cards) => {
   cards.forEach((card) => {
-    const cardElement = generateCard(card);
-    cardSection.addItem(cardElement);
+    const cardElemet = generateCard(card);
+    cardSection.addItem(cardElemet);
   });
 });
 
