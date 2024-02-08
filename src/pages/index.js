@@ -59,7 +59,7 @@ function openAvatarForm() {
   avatarModal.open();
 }
 
-validationSettings.profileImage.addEventListener("click", () => {
+variables.profileImage.addEventListener("click", () => {
   openAvatarForm();
 });
 
@@ -207,7 +207,7 @@ profileEditButton.addEventListener("click", () => {
 addCardPopup.setEventListeners();
 profileEditFormPopup.setEventListeners();
 
-document.querySelector(".profile__plus-button").addEventListener("click", () => {
+variables.addNewCardButton.addEventListener("click", () => {
   cardFormValidator.toggleButtonState();
   addCardPopup.open();
 });
