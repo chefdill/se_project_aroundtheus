@@ -50,7 +50,7 @@ const profileEditFormPopup = new PopupWithForm(
 );
 
 const avatarModal = new PopupWithForm(
-  variables.avatarModal,
+  "#avatar-modal",
   handleAvatarFormSubmit
 );
 avatarModal.setEventListeners();

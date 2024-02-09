@@ -46,7 +46,7 @@
       profileTitleInput: document.querySelector("#profile-title-input"),
       profileDescriptionInput: document.querySelector("#profile-description-input"),
       profileImage: document.querySelector(".profile__image"),
-      addNewModalCard: document.querySelector("#add-card-form"),
+      addNewModalCard: document.querySelector("#add-card-modal"),
       cardListEl: document.querySelector(".cards__list"),
       addNewCardButton: document.querySelector(".profile__plus-button"),
       deleteModal: document.querySelector("#delete-modal"),

@@ -6,7 +6,7 @@ class FormValidator {
       this._inputErrorClass = validationSettings.inputErrorClass;
       this._errorClass = validationSettings.errorClass;
       this._formEl = formSelector;
-      this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
+      this._inputEls = [...this._formEl.querySelectorAll("modal__input")];
       this._submitButtons = this._formEl.querySelector(this._submitButtonSelector);
     }
   
