@@ -71,6 +71,9 @@ const addCardPopup = new PopupWithForm(
   handleAddCardFormSubmit
 );
 
+// const deleteModal = new PopupWithDelete("#delete-modal");
+// deleteModal.setEventListeners();
+
 //functions
 
 function createCard(cardData) {
@@ -112,9 +115,6 @@ function handleAddCardFormSubmit(inputValues) {
 function handleImageClick(cardData) {
   popupWithImage.open(cardData);
 }
-
-const deleteModal = new PopupWithDelete(variables.deleteModal);
-deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
   // open the modal
