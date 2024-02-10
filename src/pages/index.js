@@ -105,7 +105,7 @@ function handleImageClick(cardData) {
   popupWithImage.open(cardData);
 }
 
-const deleteModal = new PopupWithDelete(variables.deleteModal);
+const deleteModal = new PopupWithDelete("#delete-modal");
 deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
