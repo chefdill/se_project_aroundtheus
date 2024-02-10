@@ -77,11 +77,11 @@ function createCard(cardData) {
   const card = new Card(
     cardData,
     "#card-template",
-    handleImageClick,
+    // handleImageClick,
     handleDeleteClick,
     handleLikeClick
   );
-  section.addItem(card.generateCard());
+  section.addItem(card.getView());
 }
 
 function setButtonText(button, text) {
