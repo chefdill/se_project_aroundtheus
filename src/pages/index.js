@@ -77,7 +77,7 @@ function createCard(cardData) {
   const card = new Card(
     cardData,
     "#card-template",
-    // handleImageClick,
+    handleImageClick,
     handleDeleteClick,
     handleLikeClick
   );
@@ -107,9 +107,14 @@ function handleAddCardFormSubmit(inputValues) {
     .finally(() => {
       setButtonText(variables.addNewCardButton, "Save");
     });
+  }
 
-    const deleteModal = new PopupWithDelete(variables.deleteModal);
-    deleteModal.setEventListeners();
+function handleImageClick(cardData) {
+  popupWithImage.open(cardData);
+}
+
+const deleteModal = new PopupWithDelete(variables.deleteModal);
+deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
   // open the modal
@@ -125,7 +130,17 @@ function handleDeleteClick(card) {
       .catch(console.error);
   });
 }
+
+function handleLikeClick(card) {
+  api
+    .updateLike(card._id, card.isLiked())
+    .then(() => {
+      card.handleLike();
+      console.log(card);
+    })
+    .catch(console.error);
 }
+
 
 function handleAvatarFormSubmit(inputValues) {
   setButtonText(variables.avatarModalButton, "Saving...");
