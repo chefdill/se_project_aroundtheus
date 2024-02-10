@@ -73,17 +73,6 @@ const addCardPopup = new PopupWithForm(
 
 //functions
 
-function createCard(cardData) {
-  const card = new Card(
-    cardData,
-    "#card-template",
-    handleImageClick,
-    handleDeleteClick,
-    handleLikeClick
-  );
-  section.addItem(card.getView());
-}
-
 function setButtonText(button, text) {
   button.textContent = text;
 }
@@ -113,7 +102,7 @@ function handleImageClick(cardData) {
   popupWithImage.open(cardData);
 }
 
-const deleteModal = new PopupWithDelete(variables.deleteModal);
+const deleteModal = new PopupWithDelete("#delete-modal");
 deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
@@ -210,6 +199,17 @@ api
   })
   .catch(console.error);
 
+
+  function createCard(cardData) {
+    const card = new Card(
+      cardData,
+      "#card-template",
+      handleImageClick,
+      handleDeleteClick,
+      handleLikeClick
+    );
+    section.addItem(card.getView());
+  }
 //Event Listeners
 
 profileEditButton.addEventListener("click", () => {
