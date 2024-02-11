@@ -71,8 +71,8 @@ const addCardPopup = new PopupWithForm(
   handleAddCardFormSubmit
 );
 
-// const deleteModal = new PopupWithDelete("#delete-modal");
-// deleteModal.setEventListeners();
+const deleteModal = new PopupWithDelete(variables.deleteModal);
+deleteModal.setEventListeners();
 
 //functions
 
