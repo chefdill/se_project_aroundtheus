@@ -22,34 +22,6 @@ const api = new Api({
   }
 }); 
 
-let section;
-
-api
-  .getInitialCards()
-  .then((res) => {
-    section = new Section(
-      {
-        items: res,
-        renderer: (cardData) => {
-          createCard(cardData);
-        },
-      },
-      "cards__list"
-    );
-    section.renderItems();
-    console.log(res);
-  })
-  .catch(console.error);
-
-api
-  .getUserInfo()
-  .then((res) => {
-    console.log(res);
-    userInfo.setUserInfo(res.name, res.about);
-    userInfo.setAvatar(res.avatar);
-  })
-  .catch(console.error);
-
 const cardFormValidator = new FormValidator(variables.addNewModalCard, validationSettings);
 cardFormValidator.enableValidation();
 
@@ -103,17 +75,6 @@ const deleteModal = new PopupWithDelete("#delete-modal");
 deleteModal.setEventListeners();
 
 //functions
-
-function createCard(cardData) {
-  const card = new Card(
-    cardData,
-    "#card-template",
-    handleImageClick,
-    handleDeleteClick,
-    handleLikeClick
-  );
-  section.addItem(card.getView(cardData));
-}
 
 function setButtonText(button, text) {
   button.textContent = text;
@@ -184,11 +145,6 @@ function handleAvatarFormSubmit(inputValues) {
       setButtonText(variables.avatarModalButton, "Save");
     });
 }
-// function handleAddCardFormSubmit(formData) {
-//   const card = createCard({ name: formData.title, link: formData.url });
-//   cardSection.addItem(card);
-//   addCardPopup.close();
-// }
 
 function handleProfileEditFormSubmit(formData) {
   userInfo.setUserInfo(formData.title, formData.description);
@@ -205,10 +161,49 @@ api.getUserInfo().then((UserInfo) => {
 
 api.getInitialCards().then((cards) => {
   cards.forEach((card) => {
-    const cardElement = getView(card);
-    cardSection.addItem(cardElement);
+    const cardElemet = generateCard(card);
+    cardSection.addItem(cardElemet);
   });
 });
+
+let section;
+
+function createCard(cardData) {
+  const card = new Card(
+    cardData,
+    "#card-template",
+    handleImageClick,
+    handleDeleteClick,
+    handleLikeClick
+  );
+  section.addItem(card.getView());
+}
+
+api
+  .getInitialCards()
+  .then((res) => {
+    section = new Section(
+      {
+        items: res,
+        renderer: (cardData) => {
+          createCard(cardData);
+        },
+      },
+      "gallery__cards"
+    );
+    section.renderItems();
+    console.log(res);
+  })
+  .catch(console.error);
+
+api
+  .getUserInfo()
+  .then((res) => {
+    console.log(res);
+    userInfo.setUserInfo(res.name, res.about);
+    userInfo.setAvatar(res.avatar);
+  })
+  .catch(console.error);
 
 //Event Listeners
 

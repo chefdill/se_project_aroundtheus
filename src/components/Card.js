@@ -15,6 +15,14 @@ export default class Card {
       this._handleLikeIcon = handleLikeIcon;
       this._handleImageClick = handleImageClick;
     }
+
+    _getTemplate() {
+      const cardElement = document
+        .querySelector(this._cardSelector)
+        .content.firstElementChild.cloneNode(true);
+  
+      return cardElement;
+    }
   
     _setEventListeners() {
       this._cardElement
