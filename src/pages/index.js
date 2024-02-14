@@ -99,11 +99,16 @@ const addCardPopup = new PopupWithForm(
   handleAddCardFormSubmit
 );
 
+<<<<<<< HEAD
 const deleteModal = new PopupWithDelete("#delete-modal");
+=======
+const deleteModal = new PopupWithDelete(variables.deleteModal);
+>>>>>>> 39af6e09211e32b667f42042afcaadbf291c907b
 deleteModal.setEventListeners();
 
 //functions
 
+<<<<<<< HEAD
 function createCard(cardData) {
   const card = new Card(
     cardData,
@@ -115,6 +120,8 @@ function createCard(cardData) {
   section.addItem(card.getView(cardData));
 }
 
+=======
+>>>>>>> 39af6e09211e32b667f42042afcaadbf291c907b
 function setButtonText(button, text) {
   button.textContent = text;
 }
@@ -210,6 +217,48 @@ api.getInitialCards().then((cards) => {
   });
 });
 
+<<<<<<< HEAD
+=======
+let section;
+
+api
+  .getInitialCards()
+  .then((res) => {
+    section = new Section(
+      {
+        items: res,
+        renderer: (cardData) => {
+          createCard(cardData);
+        },
+      },
+      "gallery__cards"
+    );
+    section.renderItems();
+    console.log(res);
+  })
+  .catch(console.error);
+
+api
+  .getUserInfo()
+  .then((res) => {
+    console.log(res);
+    userInfo.setUserInfo(res.name, res.about);
+    userInfo.setAvatar(res.avatar);
+  })
+  .catch(console.error);
+
+
+  function createCard(cardData) {
+    const card = new Card(
+      cardData,
+      "#card-template",
+      handleImageClick,
+      handleDeleteClick,
+      handleLikeClick
+    );
+    section.addItem(card.getView());
+  }
+>>>>>>> 39af6e09211e32b667f42042afcaadbf291c907b
 //Event Listeners
 
 profileEditButton.addEventListener("click", () => {
