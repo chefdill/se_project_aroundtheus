@@ -134,7 +134,7 @@ function handleLikeClick(card) {
 
 // FORM VALIDATOR
 
-const addFormValidator = new FormValidator(validationSettings, variables.profileAddModal);
+const addFormValidator = new FormValidator(validationSettings, variables.addNewModalCard);
 addFormValidator.enableValidation();
 
 const editFormValidator = new FormValidator(validationSettings, variables.profileEditModal);
@@ -163,7 +163,7 @@ const editPopup = new PopupWithForm(
 );
 
 function openEditForm() {
-  const user = userinfo.getUserInfo();
+  const user = userInfo.getUserInfo();
   variables.nameInput.value = user.name;
   variables.descriptionInput.value = user.description;
   editPopup.open();
@@ -196,7 +196,7 @@ function handleAvatarFormSubmit(inputValues) {
   api
     .updateAvatar(inputValues.link)
     .then((res) => {
-      userinfo.setAvatar(res.avatar);
+      userInfo.setAvatar(res.avatar);
       console.log(res);
       avatarModal.close();
     })
@@ -208,7 +208,7 @@ function handleAvatarFormSubmit(inputValues) {
 
 // USER INFO
 
-const userinfo = new UserInfo(
+const userInfo = new userInfo(
   ".profile__title",
   ".profile__description",
   ".profile__avatar"
@@ -219,7 +219,7 @@ function handleEditFormSubmit(inputValues) {
   api
     .editProfile(inputValues.name, inputValues.description)
     .then((res) => {
-      userinfo.setUserInfo(res.name, res.about);
+      userInfo.setUserInfo(res.name, res.about);
       console.log(res);
       editPopup.close();
     })
