@@ -48,7 +48,7 @@
       profileImage: document.querySelector(".profile__image"),
       addNewModalCard: document.querySelector("#add-card-modal"),
       cardListEl: document.querySelector(".cards__list"),
-      addNewCardButton: document.querySelector(".profile__plus-button"),
+      profileAddButton: document.querySelector(".profile__plus-button"),
       deleteModal: document.querySelector("#delete-modal"),
       avatarInput: document.querySelector("#avatar-url-input"),
       avatarModal: document.querySelector("#avatar-modal"),
