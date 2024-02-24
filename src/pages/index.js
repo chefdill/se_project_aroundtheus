@@ -44,8 +44,8 @@ api
   .loadInfo()
   .then((res) => {
     console.log(res);
-    userinfo.setUserInfo(res.name, res.about);
-    userinfo.setAvatar(res.avatar);
+    userInfo.setUserInfo(res.name, res.about);
+    userInfo.setAvatar(res.avatar);
   })
   .catch(console.error);
 
@@ -129,7 +129,6 @@ function handleLikeClick(card) {
       console.log(card);
     })
     .catch(console.error);
-  // handle changing the button's state in a .then after the successful response
 }
 
 // FORM VALIDATOR
@@ -143,7 +142,7 @@ editFormValidator.enableValidation();
 const avatarFormValidator = new FormValidator(validationSettings, variables.avatarModal);
 avatarFormValidator.enableValidation();
 
-// POPUP WITH FORM - ADD FORM
+// ADD FORM
 
 const addPopup = new PopupWithForm(variables.addCardClass, handleAddCardSubmit);
 
@@ -155,7 +154,7 @@ addPopup.setEventListeners();
 
 variables.profileAddButton.addEventListener("click", () => openAddForm());
 
-//EDIT FORM
+// EDIT FORM
 
 const editPopup = new PopupWithForm(
   variables.editCardClass,
@@ -175,7 +174,7 @@ variables.profileEditButton.addEventListener("click", () => {
   openEditForm();
 });
 
-//AVATAR FORM
+// AVATAR FORM
 
 const avatarModal = new PopupWithForm(
   variables.avatarModal,
@@ -208,7 +207,7 @@ function handleAvatarFormSubmit(inputValues) {
 
 // USER INFO
 
-const userInfo = new userInfo(
+const userInfo = new UserInfo(
   ".profile__title",
   ".profile__description",
   ".profile__avatar"
