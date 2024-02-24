@@ -1,5 +1,5 @@
 import PopupWithForm from "../components/PopupWithForm.js";
-import PopupWithImage from "../components/PopupWIthImage.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithDelete from "../components/PopupWithDelete.js";
 import FormValidator from "../components/FormValidator.js";
 import UserInfo from "../components/UserInfo.js";
