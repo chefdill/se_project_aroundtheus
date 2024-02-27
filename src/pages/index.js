@@ -51,7 +51,7 @@ api
 
 // POPUP WITH IMAGE
 
-const popupWithImage = new PopupWithImage("#picture-modal");
+const popupWithImage = new PopupWithImage(".modal__image");
 
 popupWithImage.setEventListeners();
 
