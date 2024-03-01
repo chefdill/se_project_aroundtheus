@@ -53,7 +53,8 @@
       avatarInput: document.querySelector("#avatar-url-input"),
       avatarModal: document.querySelector("#avatar-modal"),
       avatarModalButton: document.querySelector("#avatar-modal-button"),
-    
+      addModalButton: document.querySelector(".modal__button"),
+      editModalButton: document.querySelector("#edit-button"),
     }
 
 

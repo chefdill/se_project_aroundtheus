@@ -51,7 +51,7 @@ api
 
 // POPUP WITH IMAGE
 
-const popupWithImage = new PopupWithImage(".modal__image");
+const popupWithImage = new PopupWithImage(".modal");
 
 popupWithImage.setEventListeners();
 
@@ -101,7 +101,7 @@ function handleAddCardSubmit(inputValues) {
 
 // HANDLE DELETE MODAL
 
-const deleteModal = new PopupWithDelete(variables.deleteCardClass);
+const deleteModal = new PopupWithDelete("#delete-modal");
 deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
@@ -144,7 +144,7 @@ avatarFormValidator.enableValidation();
 
 // ADD FORM
 
-const addPopup = new PopupWithForm(variables.addCardClass, handleAddCardSubmit);
+const addPopup = new PopupWithForm(variables.addNewModalCard, handleAddCardSubmit);
 
 function openAddForm() {
   addPopup.open();
