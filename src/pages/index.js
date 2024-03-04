@@ -51,8 +51,8 @@ api
 
 // POPUP WITH IMAGE
 
-const popupWithImage = new PopupWithImage(".modal");
-
+const popupWithImage = new PopupWithImage(
+  "#modal-preview");
 popupWithImage.setEventListeners();
 
 // SAVE BUTTON TEXT CHANGE FUNCTION FOR FORMS
@@ -87,7 +87,7 @@ function handleAddCardSubmit(inputValues) {
       // create a new card
       createCard(res);
       // render it
-      variables.profileAddForm.reset();
+      variables.addNewModalCard.reset();
       // toggle button state
       addFormValidator.toggleButtonState();
       // close modal
@@ -101,7 +101,8 @@ function handleAddCardSubmit(inputValues) {
 
 // HANDLE DELETE MODAL
 
-const deleteModal = new PopupWithDelete("#delete-modal");
+const deleteModal = new PopupWithDelete(
+  variables.deleteModal);
 deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
@@ -133,18 +134,26 @@ function handleLikeClick(card) {
 
 // FORM VALIDATOR
 
-const addFormValidator = new FormValidator(validationSettings, variables.addNewModalCard);
+const addFormValidator = new FormValidator(
+  variables.addNewModalCard, 
+  validationSettings);
 addFormValidator.enableValidation();
 
-const editFormValidator = new FormValidator(validationSettings, variables.profileEditModal);
+const editFormValidator = new FormValidator(
+  variables.profileEditForm, 
+  validationSettings);
 editFormValidator.enableValidation();
 
-const avatarFormValidator = new FormValidator(validationSettings, variables.avatarModal);
+const avatarFormValidator = new FormValidator(
+  variables.avatarModal, 
+  validationSettings);
 avatarFormValidator.enableValidation();
 
 // ADD FORM
 
-const addPopup = new PopupWithForm(variables.addNewModalCard, handleAddCardSubmit);
+const addPopup = new PopupWithForm(
+  variables.profileAddForm, 
+  handleAddCardSubmit);
 
 function openAddForm() {
   addPopup.open();
@@ -152,12 +161,13 @@ function openAddForm() {
 
 addPopup.setEventListeners();
 
-variables.profileAddButton.addEventListener("click", () => openAddForm());
+variables.profileAddButton.addEventListener(
+  "click", () => openAddForm());
 
 // EDIT FORM
 
 const editPopup = new PopupWithForm(
-  variables.editCardClass,
+  variables.profileEditModal,
   handleEditFormSubmit
 );
 
@@ -186,7 +196,7 @@ function openAvatarForm() {
   avatarModal.open();
 }
 
-variables.avatarIcon.addEventListener("click", () => {
+variables.profileImage.addEventListener("click", () => {
   openAvatarForm();
 });
 
