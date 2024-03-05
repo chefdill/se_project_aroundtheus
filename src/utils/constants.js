@@ -51,7 +51,7 @@
       addNewModalCard: "#add-card-modal",
       cardListEl: document.querySelector(".cards__list"),
       profileAddButton: document.querySelector(".profile__plus-button"),
-      deleteModal: "#delete-modal",
+      deleteModal: "#delete-card-form",
       avatarInput: document.querySelector("#avatar-url-input"),
       avatarModal: "#avatar-modal",
       avatarModalButton: document.querySelector("#avatar-modal-button"),
