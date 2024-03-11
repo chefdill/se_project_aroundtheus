@@ -102,7 +102,7 @@ function handleAddCardSubmit(inputValues) {
 // HANDLE DELETE MODAL
 
 const deleteModal = new PopupWithDelete(
-  variables.deleteModal);
+  variables.deleteCard);
 deleteModal.setEventListeners();
 
 function handleDeleteClick(card) {
