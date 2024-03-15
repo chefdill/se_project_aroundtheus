@@ -135,18 +135,18 @@ function handleLikeClick(card) {
 // FORM VALIDATOR
 
 const addFormValidator = new FormValidator(
-  variables.addNewModalCard, 
-  validationSettings);
+  validationSettings,
+  variables.addNewModalCard);
 addFormValidator.enableValidation();
 
 const editFormValidator = new FormValidator(
-  variables.profileEditForm, 
-  validationSettings);
+  validationSettings, 
+  variables.profileEditForm);
 editFormValidator.enableValidation();
 
 const avatarFormValidator = new FormValidator(
-  variables.avatarModal, 
-  validationSettings);
+  validationSettings, 
+  variables.avatarModal);
 avatarFormValidator.enableValidation();
 
 // ADD FORM
