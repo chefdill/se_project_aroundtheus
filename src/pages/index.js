@@ -152,7 +152,7 @@ avatarFormValidator.enableValidation();
 // ADD FORM
 
 const addPopup = new PopupWithForm(
-  variables.profileAddForm, 
+  "#add-card-form", 
   handleAddCardSubmit);
 
 function openAddForm() {
