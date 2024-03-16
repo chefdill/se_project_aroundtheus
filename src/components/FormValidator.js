@@ -6,12 +6,12 @@ class FormValidator {
       this._inputErrorClass = validationSettings.inputErrorClass;
       this._errorClass = validationSettings.errorClass;
       this._formEl = document.querySelector( formSelector );
+      console.log(formSelector);
       this._submitButtons = this._formEl.querySelector(this._submitButtonSelector);
       this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
     }
   
     _checkInputValidity(inputEl) {
-      console.log( formSelector );
       if (!inputEl.validity.valid) {
         return this._showInputError(inputEl);
       }

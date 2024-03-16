@@ -141,7 +141,7 @@ addFormValidator.enableValidation();
 
 const editFormValidator = new FormValidator(
   validationSettings, 
-  variables.profileEditForm);
+  variables.profileEditModal);
 editFormValidator.enableValidation();
 
 const avatarFormValidator = new FormValidator(
@@ -167,7 +167,7 @@ variables.profileAddButton.addEventListener(
 // EDIT FORM
 
 const editPopup = new PopupWithForm(
-  variables.profileEditModal,
+  variables.profileEditForm,
   handleEditFormSubmit
 );
 
