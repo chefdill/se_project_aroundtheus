@@ -167,7 +167,7 @@ variables.profileAddButton.addEventListener(
 // EDIT FORM
 
 const editPopup = new PopupWithForm(
-  variables.profileEditForm,
+  variables.profileEditModal,
   handleEditFormSubmit
 );
 
