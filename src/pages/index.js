@@ -226,7 +226,7 @@ const userInfo = new UserInfo(
 function handleEditFormSubmit(inputValues) {
   setButtonText(variables.editModalButton, "Saving...");
   api
-    .editProfile(inputValues.name, inputValues.description)
+    .editProfile(inputValues.title, inputValues.description)
     .then((res) => {
       userInfo.setUserInfo(res.name, res.about);
       console.log(res);
