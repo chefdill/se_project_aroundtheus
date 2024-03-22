@@ -47,7 +47,7 @@
       profileDescriptionInput: document.querySelector("#profile-description-input"),
       profileEditForm: document.querySelector("#edit-card-form"),
       profileAddForm: document.querySelector("#add-card-form"),
-      profileImage: document.querySelector(".profile__image"),
+      profileImage: document.querySelector(".profile__avatar"),
       addNewModalCard: "#add-card-modal",
       cardListEl: document.querySelector(".cards__list"),
       profileAddButton: document.querySelector(".profile__plus-button"),

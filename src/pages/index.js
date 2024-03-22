@@ -173,8 +173,8 @@ const editPopup = new PopupWithForm(
 
 function openEditForm() {
   const user = userInfo.getUserInfo();
-  variables.nameInput.value = user.name;
-  variables.descriptionInput.value = user.description;
+  variables.profileTitleInput.value = user.name;
+  variables.profileDescriptionInput.value = user.description;
   editPopup.open();
 }
 
