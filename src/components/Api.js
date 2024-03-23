@@ -46,7 +46,7 @@ class Api {
       headers: this._headers,
       body: JSON.stringify({
         name: data.title,
-        link: data.link,
+        link: data.url,
       }),
     }).then(this._checkResponse);
   }
