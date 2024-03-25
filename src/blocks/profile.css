@@ -14,14 +14,8 @@
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
-  margin: 0;
   margin-bottom: 30px;
 }
-
-/* .profile__image {
-  margin: 0;
-  margin-bottom: 30px;
-} */
 
 .profile__info {
   display: grid;
