@@ -13,7 +13,7 @@ class Api {
   }
 
   getInitialCards() {
-    return fetch(this.baseUrl + "/cards", {
+    return fetch(this.baseUrl + `/cards`, {
       headers: this._headers,
     }).then(this._checkResponse);
   }
@@ -21,7 +21,7 @@ class Api {
   // other methods for working with the API
 
   loadInfo() {
-    return fetch(this.baseUrl + "/users/me", {
+    return fetch(this.baseUrl + `/users/me`, {
       method: "GET",
       cohort: "group-42",
       headers: this._headers,
@@ -29,7 +29,7 @@ class Api {
   }
 
   editProfile(name, about) {
-    return fetch(this.baseUrl + "/users/me", {
+    return fetch(this.baseUrl + `/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
@@ -42,7 +42,7 @@ class Api {
   // pass name and link as argument
   addNewCard(data) {
     console.log(data);
-    return fetch(this.baseUrl + "/cards", {
+    return fetch(this.baseUrl + `/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
@@ -70,7 +70,7 @@ class Api {
   }
 
   updateAvatar(avatar) {
-    return fetch(this.baseUrl + "/users/me/avatar", {
+    return fetch(this.baseUrl + `/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
