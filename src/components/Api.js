@@ -41,7 +41,6 @@ class Api {
 
   // pass name and link as argument
   addNewCard(data) {
-    console.log(data);
     return fetch(this.baseUrl + `/cards`, {
       method: "POST",
       headers: this._headers,
