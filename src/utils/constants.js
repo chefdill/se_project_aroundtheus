@@ -1,4 +1,4 @@
-export const initialCards = [
+  const initialCards = [
     {
       name: "Yosemite Valley",
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -31,8 +31,7 @@ export const initialCards = [
     },
   ];
 
-  export const validationSettings = {
-    formSelector: ".modal__form",
+    const validationSettings = {
     inputSelector: ".modal__input",
     submitButtonSelector: ".modal__button",
     inactiveButtonClass: "modal__button_disabled",
@@ -40,13 +39,25 @@ export const initialCards = [
     errorClass: "modal__error"
   };
 
-  export const profileEditButton = document.querySelector("#profile-edit-button");
-  export const profileEditModal = document.querySelector("#profile-edit-modal");
-  export const profileTitleInput = document.querySelector("#profile-title-input");
-  export const profileDescriptionInput = document.querySelector(
-    "#profile-description-input"
-  );
+  const variables = {
+      profileEditButton: document.querySelector("#profile-edit-button"),
+      profileEditModal: "#profile-edit-modal",
+      profileTitleInput: document.querySelector("#profile-title-input"),
+      profileDescriptionInput: document.querySelector("#profile-description-input"),
+      profileEditForm: document.querySelector("#edit-card-form"),
+      profileAddForm: document.querySelector("#add-card-form"),
+      profileImage: document.querySelector(".profile__avatar"),
+      addNewModalCard: "#add-card-modal",
+      cardListEl: document.querySelector(".cards__list"),
+      profileAddButton: document.querySelector(".profile__plus-button"),
+      deleteCard: "#delete-modal",
+      avatarInput: document.querySelector("#avatar-url-input"),
+      avatarModal: "#avatar-modal",
+      avatarModalButton: document.querySelector("#avatar-modal-button"),
+      addModalButton: document.querySelector(".modal__button"),
+      editModalButton: document.querySelector("#edit-button"),
+    }
 
-  export const addNewModalCard = document.querySelector("#add-card-form");
-  export const cardListEl = document.querySelector(".cards__list");
-  export const addNewCardButton = document.querySelector(".profile__plus-button");
+
+export {initialCards, validationSettings, variables};
+

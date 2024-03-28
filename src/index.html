@@ -18,14 +18,14 @@
       <main class="content">
         <section class="profile page__section">
           <img
+            class="profile__avatar"
+            alt="avatar"
             src="<%=require('./images/jacques-cousteau.jpg')%>"
-            alt="Avatar"
-            class="profile__image"
           />
           <div class="profile__info">
             <h1 class="profile__title" id="profile-title">Jacques Cousteau</h1>
             <button type="button" class="profile__edit-button" id= "profile-edit-button"></button>
-            <p class="profile__description" id="profile-description">Explorer</p>
+            <p class="profile__description" id="profile-description"></p>
           </div>
           <button type="button" class="profile__plus-button"></button>
         </section>
@@ -47,7 +47,7 @@
           id = "profile-edit-close-button">
         </button>
       <h2 class="modal__heading">Edit profile</h2>
-        <form class="modal__form">
+        <form class="modal__form" id="edit-card-form">
           <input 
           type="text" 
           name="title" 
@@ -72,7 +72,7 @@
           />
           <span class="modal__error" 
           id="profile-description-input-error"></span>
-          <button class="modal__button" type="submit" disabled>
+          <button class="modal__button" id="edit-button" type="submit" disabled>
             <span class="modal__button-text">Save</span>
           </button>
         </form>
@@ -118,8 +118,63 @@
       </div>
     </div>
 
+    <!-- Delete Card -->
+    <div class="modal" id="delete-modal">
+      <div class="modal__container">
+        <button
+          aria-label="Name"
+          type="button"
+          class="modal__close"
+          id="modal-delete-button-close"
+        ></button>
+        <form class="modal__form" id="delete-card-form">
+          <h2 class="modal__heading">Are You Sure?</h2>
+          <button
+            type="submit"
+            class="modal__button"
+            id="delete-card-button"
+          >
+            Yes
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Change Avatar -->
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          aria-label="Name"
+          type="button"
+          class="modal__close"
+          id="modal-avatar-button-close"
+        ></button>
+        <form class="modal__form" id="avatar-form">
+          <h2 class="modal__heading">Change Profile Picture</h2>
+          <input
+            class="modal__input"
+            type="url"
+            name="link"
+            id="avatar-url-input"
+            placeholder="Avatar URL"
+            required
+          />
+          <span class="modal__input-error" id="avatar-url-input-error"
+            >Fill out this field</span
+          >
+          <button
+            type="submit"
+            class="modal__button modal__button_disabled"
+            id="avatar-modal-button"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
  <!-- Image Preview -->
-     <div class="modal" id="modal-preview">
+    <div class="modal" id="modal-preview">
       <div class="modal__container-picture">
       <button 
         class="modal__close" 
@@ -127,8 +182,8 @@
         id = "preview-image-close">
       </button>
       <img
-        class="modal__image"
         src="#"
+        class="modal__image"
         alt="#"
       />
       <h2 class="modal__preview-title"></h2>
@@ -152,3 +207,4 @@
 
   </body>
 </html>
+

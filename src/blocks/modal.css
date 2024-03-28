@@ -136,8 +136,8 @@
 }
 
 .modal__image{
-  max-width: 75vw;
-  max-height: 75vh;
+  width: 433px;
+  height: 548px;
 }
 
 .modal__preview-title{
@@ -201,7 +201,4 @@
     /* padding-left: 40px; */
   }
 
-  /* .modal__preview-title{
-    padding-left: 40px;
-  } */
 }

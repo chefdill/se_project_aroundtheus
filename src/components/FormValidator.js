@@ -1,12 +1,13 @@
-export default class FormValidator {
-    constructor(formEl, validationSettings) {
-      this._formEl = formEl;
-      this._formSelector = validationSettings.formSelector;
+class FormValidator {
+    constructor( validationSettings, formSelector ) {
       this._inputSelector = validationSettings.inputSelector;
       this._submitButtonSelector = validationSettings.submitButtonSelector;
       this._inactiveButtonClass = validationSettings.inactiveButtonClass;
       this._inputErrorClass = validationSettings.inputErrorClass;
       this._errorClass = validationSettings.errorClass;
+      this._formEl = document.querySelector( formSelector );
+      this._submitButtons = this._formEl.querySelector(this._submitButtonSelector);
+      this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
     }
   
     _checkInputValidity(inputEl) {
@@ -30,20 +31,6 @@ export default class FormValidator {
       errorMessageEl.classList.remove(this._errorClass);
     }
   
-    _setEventListeners() {
-      this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
-      this._submitButtons = this._formEl.querySelector(
-        this._submitButtonSelector
-      );
-  
-      this._inputEls.forEach((inputEl) => {
-        inputEl.addEventListener("input", (e) => {
-          this._checkInputValidity(inputEl);
-          this.toggleButtonState();
-        });
-      });
-    }
-  
     _hasInvalidInput(inputList) {
       return !inputList.every((inputEl) => inputEl.validity.valid);
     }
@@ -57,8 +44,23 @@ export default class FormValidator {
       this._submitButtons.classList.remove(this._inactiveButtonClass);
       this._submitButtons.disabled = false;
     }
+
+    
+    _setEventListeners() {
+      this._inputEls.forEach((inputEl) => {
+        inputEl.addEventListener("input", (e) => {
+          this._checkInputValidity(inputEl);
+          this.toggleButtonState();
+        });
+      });
+    }
   
     enableValidation() {
+      this._formEl.addEventListener("submit", (e) => {
+        e.preventDefault();
+      });
       this._setEventListeners();
     }
   }
+  export default FormValidator;
+

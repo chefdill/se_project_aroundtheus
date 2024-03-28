@@ -7,13 +7,14 @@
   max-width: 880px;
 }
 
-.profile__image {
+.profile__avatar {
   height: 120px;
   width: 120px;
   border-radius: 50%;
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
+  margin-bottom: 30px;
 }
 
 .profile__info {
@@ -118,11 +119,6 @@
     margin: 0;
     align-items: center;
     max-width: 282px;
-  }
-
-  .profile__image {
-    margin: 0;
-    margin-bottom: 30px;
   }
 
   .profile__edit-button {
