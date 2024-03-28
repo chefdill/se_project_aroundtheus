@@ -87,7 +87,7 @@ function handleAddCardSubmit(inputValues) {
       // create a new card
       createCard(res);
       // render it
-      variables.addNewModalCard.reset();
+      variables.profileAddForm.reset();
       // toggle button state
       addFormValidator.toggleButtonState();
       // close modal

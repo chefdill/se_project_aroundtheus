@@ -2,8 +2,7 @@ class Section {
   constructor({ items, renderer }, containerSelector) {
     this._items = items;
     this._renderer = renderer;
-    console.log(containerSelector);
-    this._container = document.querySelector(containerSelector);
+  this._container = document.querySelector(`.${containerSelector}`);
   }
 
   renderItems() {
@@ -13,7 +12,7 @@ class Section {
   }
 
   addItem(element) {
-    console.log(element);
+    console.log(this._container);
     this._container.prepend(element);
   }
 }
